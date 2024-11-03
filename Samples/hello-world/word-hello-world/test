@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OfficeApp 
+    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+    xsi:type="TaskPaneApp">
+    
+    <Id>a385fa72-4a36-4a7e-8eed-7af3f393eaa6</Id> <!-- Your provided GUID -->
+    <Version>1.0.0.0</Version>
+    <ProviderName>Sample Company</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <DisplayName DefaultValue="Sample Document Automation Add-in"/>
+    <Description DefaultValue="Automate document tasks with this add-in."/>
+    
+    <Icon>
+        <bt:Image size="16" resid="icon16"/>
+        <bt:Image size="32" resid="icon32"/>
+        <bt:Image size="80" resid="icon80"/>
+    </Icon>
+
+    <Resources>
+        <bt:Images>
+            <bt:Image id="icon16" src="https://via.placeholder.com/16.png?text=16x16"/>
+            <bt:Image id="icon32" src="https://via.placeholder.com/32.png?text=32x32"/>
+            <bt:Image id="icon80" src="https://via.placeholder.com/80.png?text=80x80"/>
+        </bt:Images>
+        <bt:Urls>
+            <bt:Url id="taskpaneUrl" src="https://www.example.com/taskpane.html"/> <!-- Sample URL for the task pane -->
+        </bt:Urls>
+    </Resources>
+
+    <Requirements>
+        <Sets>
+            <Set Name="WordApi" MinVersion="1.1"/>
+        </Sets>
+    </Requirements>
+
+    <FormSettings>
+        <Form xsi:type="TaskPaneForm">
+            <DesktopSettings>
+                <SourceLocation resid="taskpaneUrl"/>
+                <RequestedHeight>600</RequestedHeight>
+            </DesktopSettings>
+            <WebSettings>
+                <SourceLocation resid="taskpaneUrl"/>
+            </WebSettings>
+        </Form>
+    </FormSettings>
+
+    <Permissions>ReadWriteDocument</Permissions>
+
+    <Rule xsi:type="Rule">
+        <Item xsi:type="Item" id="document"/>
+    </Rule>
+</OfficeApp>
